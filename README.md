@@ -147,7 +147,7 @@ and upload again.
 
 ---
 
-###5. Install the Servo Arm
+### 5. Install the Servo Arm
 
 Once the servo is confirmed working:
 
