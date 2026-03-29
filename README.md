@@ -1,4 +1,4 @@
-#  Shinies ODST Visor System
+#  Shinies ODST Visor Motorization
 
 Simple motorized visor control system for the Shinies H3 ODST helmet using an **Arduino Nano + MG90S servo + button**.
 
@@ -25,36 +25,24 @@ Designed to be **easy to build, easy to modify, and beginner-friendly**.
 
 ## 🧰 Hardware Used
 
-- Arduino Nano V3
-- MG90S servo
-- Momentary push button
+- 1x Arduino Nano
+- 1x MG90S servo
+- 1x Push button
 - 5V power source for servo
 - Wires
 
 ---
 
-## 🔌 Wiring
+## 🔌 Wiring Diagram
 
-### Servo (MG90S)
+Please refer to this wiring diagram to correctly wire the system together:
 
-| Wire Color | Connect To |
-|------------|------------|
-| Red        | 5V external power |
-| Brown/Black | GND |
-| Orange/Yellow | Pin **9** |
-
-### Button
-
-| Button Pin | Connect To |
-|------------|------------|
-| One side   | Pin **2** |
-| Other side | GND |
 
 ---
 
 ## ⚠️ Power Warning
 
-Do **not** rely on the Arduino Nano 5V pin to power the servo if possible.
+Do **not** rely on the Arduino Nano 5V pin to power the servo, it will not be strong enough.
 
 Use a **separate 5V power source** for the servo.
 
@@ -62,6 +50,161 @@ Use a **separate 5V power source** for the servo.
 
 If you skip shared ground, the servo may jitter, move randomly, or not respond correctly.
 
+---
+
+---
+## 🛠️ Assembly & Setup Instructions
+
+Follow these steps carefully to install and configure the visor.
+
+---
+
+### 1. Print and Prepare the Helmet
+
+- Print the Shinies ODST helmet
+- Insert the servo into the designated slot on the right side of the helmet
+  - **Servo wires should face the right-hand side**
+- Secure the servo using screws
+- **Do NOT install the servo arm yet**
+
+> ⚠️ Wait until the code is uploaded and the servo is in the **closed (0°) position** before attaching the servo arm
+
+---
+
+### 2. Upload the Code
+
+Before continuing, grab your **Arduino Nano**.
+
+#### Install and open the code
+
+1. Download and install **Arduino IDE**
+2. Open the provided `.ino` file
+
+#### Select your board
+
+- In the top toolbar, find the board selection dropdown
+- Select: Arduino Nano
+
+#### Select the correct port
+
+1. Go to **Tools → Port**
+2. Check which ports are listed
+3. Plug in your Arduino Nano
+4. Check again — a new port should appear
+5. Select that port
+
+#### Upload the code
+
+Click **Upload**
+
+If successful, you will see on the bottom terminal:
+```
+Sketch uses 2798 bytes (9%) of program storage space. Maximum is 30720 bytes.
+Global variables use 58 bytes (2%) of dynamic memory, leaving 1990 bytes for local variables. Maximum is 2048 bytes.
+```
+
+
+---
+
+### 3. Wire the System
+
+- Follow this wiring diagram:
+
+- Double-check all connections before powering on
+
+---
+
+### 4. Test the Servo (No Arm Installed Yet)
+
+After wiring:
+
+- Power on the system
+- **Do NOT install the servo arm yet**
+
+Test the button:
+
+- Press → motor should rotate one direction
+- Press again → motor should rotate the opposite direction
+- Hold button → motor resets to **closed position**
+
+**The motor should spin clock-wise to open, and counter-clockwise to close**
+
+#### If direction is incorrect
+
+If the servo spins the wrong way:
+
+- Open the code
+- Change:
+
+```cpp
+const bool REVERSE_SERVO = true;
+```
+to: 
+```cpp
+const bool REVERSE_SERVO = false;
+```
+and upload again.
+
+---
+
+###5. Install the Servo Arm
+
+Once the servo is confirmed working:
+
+Hold the button to ensure the servo is in the closed position
+Install the servo arm so it is:
+Perfectly parallel to the servo body like this:
+
+Secure the arm tightly.
+
+---
+
+### 6. Connect the Linkage
+
+Now connect the servo arm to the visor frame.
+
+You can use:
+
+The provided 3D printable linkage rod with screws and nuts
+OR armature wire (or similar material)
+**Important requirements**
+
+Linkage length should be approximately:
+
+74mm
+Connections must be:
+tight
+secure
+rigid
+
+**⚠️ Any slack in the linkage will cause:**
+
+- visor sagging
+- incomplete opening
+- inconsistent motion
+  
+---
+
+### 7. Final Adjustment
+
+If your geometry varies slightly:
+
+You may need to adjust:
+
+- OPEN_ANGLE
+Increase or decrease until the visor opens correctly
+
+---
+
+### ✅ Done
+
+If everything is installed correctly, you now have a fully functioning:
+
+- 🪖 Shinies H3 ODST Motorized Visor
+- 💡 Final Notes
+Always test before final assembly or painting
+Make sure all moving parts are smooth and free of resistance
+Avoid forcing the servo into mechanical limits
 ---
 
 ## 🎮 Controls
@@ -103,7 +246,7 @@ const int STEP_DELAY_MS = 15;
 ## ✏️ What You Should Edit
 
 Most people only need to change these values:
-```
+```cpp
 const int CLOSED_ANGLE = 0;
 const int OPEN_ANGLE   = 47;
 const bool REVERSE_SERVO = false;
@@ -129,24 +272,24 @@ higher = slower
 ### If the servo moves the wrong way
 
 Change:
-```
+```cpp
 const bool REVERSE_SERVO = false;
 ```
 to:
-```
+```cpp
 const bool REVERSE_SERVO = true;
 ```
 ### Visor does not open far enough
 
 Increase:
 
-```
+```cpp
 const int OPEN_ANGLE = 47;
 ```
 
 For example:
 
-```
+```cpp
 const int OPEN_ANGLE = 50;
 ```
 
@@ -154,13 +297,13 @@ const int OPEN_ANGLE = 50;
 
 Lower:
 
-```
+```cpp
 const int OPEN_ANGLE = 47;
 ```
 
 For example:
 
-```
+```cpp
 const int OPEN_ANGLE = 45;
 ```
 
@@ -168,13 +311,13 @@ const int OPEN_ANGLE = 45;
 
 Increase:
 
-```
+```cpp
 const int STEP_DELAY_MS = 15;
 ```
 
 For example:
 
-```
+```cpp
 const int STEP_DELAY_MS = 20;
 ```
 
@@ -182,13 +325,13 @@ const int STEP_DELAY_MS = 20;
 
 Decrease:
 
-```
+```cpp
 const int STEP_DELAY_MS = 15;
 ```
 
 For example:
 
-```
+```cpp
 const int STEP_DELAY_MS = 10;
 ```
 
@@ -197,19 +340,22 @@ const int STEP_DELAY_MS = 10;
 ## 🧪 Recommended Starting Values
 
 These are good default values to start with and what works with my helmet:
-```
-const int BUTTON_PIN = 2;
-const int SERVO_PIN  = 9;
+```cpp
+const int BUTTON_PIN = 2;          
+const int SERVO_PIN  = 9;       
 
-const int CLOSED_ANGLE = 0;
-const int OPEN_ANGLE   = 47;
+const int CLOSED_ANGLE = 0;      
+const int OPEN_ANGLE   = 75;     
 
-const bool REVERSE_SERVO = false;
+const bool REVERSE_SERVO = true;  
+const bool HOLD_POSITION = true;   
 
-const int STEP_DELAY_MS    = 15;
-const int STARTUP_DELAY_MS = 1000;
-const int HOLD_TIME_MS     = 800;
-const int SETTLE_TIME_MS   = 250;
+const int STEP_DELAY_MS    = 10;   
+const int STARTUP_DELAY_MS = 1000; 
+const int HOLD_TIME_MS     = 800;  
+const int SETTLE_TIME_MS   = 250;  
+
+const int OVERSHOOT_ANGLE  = 0; 
 ```
 
 ---
@@ -250,7 +396,7 @@ const int SETTLE_TIME_MS   = 250;
 
 This code includes a startup delay:
 
-```
+```cpp
 const int STARTUP_DELAY_MS = 1000;
 ```
 
