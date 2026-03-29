@@ -226,7 +226,7 @@ Avoid forcing the servo into mechanical limits
 ```md
 The full Arduino code is located here:
 
-👉 `code/shinies_odst_visor_system.ino`
+👉 `Shinies-ODST-Visor.ino`
 
 ### How to use
 
@@ -238,22 +238,21 @@ The full Arduino code is located here:
 
 ### Key values you may want to adjust
 
-```cpp
 const int CLOSED_ANGLE = 0;
-const int OPEN_ANGLE   = 47;
-const bool REVERSE_SERVO = false;
-const int STEP_DELAY_MS = 15;
+const int OPEN_ANGLE   = 75;
+const bool REVERSE_SERVO = true;
+const int STEP_DELAY_MS = 10;
 ```
 
 ---
 ## ✏️ What You Should Edit
 
 Most people only need to change these values:
-```cpp
+```cpp 
 const int CLOSED_ANGLE = 0;
-const int OPEN_ANGLE   = 47;
-const bool REVERSE_SERVO = false;
-const int STEP_DELAY_MS = 15;
+const int OPEN_ANGLE   = 75;
+const bool REVERSE_SERVO = true;
+const int STEP_DELAY_MS = 10;
 
 ```
 
@@ -276,24 +275,24 @@ higher = slower
 
 Change:
 ```cpp
-const bool REVERSE_SERVO = false;
+const bool REVERSE_SERVO = true;
 ```
 to:
 ```cpp
-const bool REVERSE_SERVO = true;
+const bool REVERSE_SERVO = false;
 ```
 ### Visor does not open far enough
 
 Increase:
 
 ```cpp
-const int OPEN_ANGLE = 47;
+const int OPEN_ANGLE = 75;
 ```
 
 For example:
 
 ```cpp
-const int OPEN_ANGLE = 50;
+const int OPEN_ANGLE = 80;
 ```
 
 ### Servo pushes too far or hits a hard stop
@@ -301,13 +300,13 @@ const int OPEN_ANGLE = 50;
 Lower:
 
 ```cpp
-const int OPEN_ANGLE = 47;
+const int OPEN_ANGLE = 75;
 ```
 
 For example:
 
 ```cpp
-const int OPEN_ANGLE = 45;
+const int OPEN_ANGLE = 70;
 ```
 
 ### Movement is too fast
@@ -315,13 +314,13 @@ const int OPEN_ANGLE = 45;
 Increase:
 
 ```cpp
-const int STEP_DELAY_MS = 15;
+const int STEP_DELAY_MS = 10;
 ```
 
 For example:
 
 ```cpp
-const int STEP_DELAY_MS = 20;
+const int STEP_DELAY_MS = 15;
 ```
 
 ### Movement is too slow
@@ -329,13 +328,13 @@ const int STEP_DELAY_MS = 20;
 Decrease:
 
 ```cpp
-const int STEP_DELAY_MS = 15;
+const int STEP_DELAY_MS = 10;
 ```
 
 For example:
 
 ```cpp
-const int STEP_DELAY_MS = 10;
+const int STEP_DELAY_MS = 5;
 ```
 
 ---
@@ -360,19 +359,6 @@ const int SETTLE_TIME_MS   = 250;
 
 const int OVERSHOOT_ANGLE  = 0; 
 ```
-
----
-
-## 🛠️ Setup Instructions
-1. Wire the button to pin 2 and GND
-2. Wire the servo signal to pin 9
-3. Power the servo with a proper 5V external source
-4. Connect Arduino GND to servo power GND
-5. Open Arduino IDE
-6. Paste in the code
-7. Upload to your Arduino Nano
-8. Test the visor before final assembly
-
 ---
 
 ## ⚠️ Troubleshooting
