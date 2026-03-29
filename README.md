@@ -36,6 +36,7 @@ Designed to be **easy to build, easy to modify, and beginner-friendly**.
 ## 🔌 Wiring Diagram
 
 Please refer to this wiring diagram to correctly wire the system together:
+<img width="1920" height="1080" alt="To Pin 2 (D2)" src="https://github.com/user-attachments/assets/88f32cdf-1578-498d-a214-bb7bfa30c792" />
 
 
 ---
@@ -152,8 +153,8 @@ and upload again.
 Once the servo is confirmed working:
 
 Hold the button to ensure the servo is in the closed position
-Install the servo arm so it is:
-Perfectly parallel to the servo body like this:
+Install the servo arm so it is parallel to the servo body like this:
+![IMG_2838](https://github.com/user-attachments/assets/06732570-0a39-46f2-8eff-aa427a3b189e)
 
 Secure the arm tightly.
 
