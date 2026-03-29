@@ -178,7 +178,9 @@ tight
 secure
 rigid
 
-**⚠️ Any slack in the linkage will cause:**
+**⚠️Your linkage must remain rigid when force is applied. If it flexes or bends under load, the servo will not be able to properly close the visor.**
+
+**Any slack in the linkage will cause:**
 
 - visor sagging
 - incomplete opening
