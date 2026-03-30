@@ -36,7 +36,8 @@ Designed to be **easy to build, easy to modify, and beginner-friendly**.
 ## 🔌 Wiring Diagram
 
 Please refer to this wiring diagram to correctly wire the system together:
-<img width="1920" height="1080" alt="To Pin 2 (D2)" src="https://github.com/user-attachments/assets/88f32cdf-1578-498d-a214-bb7bfa30c792" />
+<img width="1920" height="1080" alt="ODST Wiring Diagram" src="https://github.com/user-attachments/assets/dfdc7b4e-307e-471d-99c2-cd3785bae9a9" />
+
 
 
 ---
