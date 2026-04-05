@@ -65,6 +65,7 @@ Follow these steps carefully to install and configure the visor.
 ### 1. Print and Prepare the Helmet
 
 - Print the Shinies ODST helmet
+- Due to space inside the helmet being limited with the motorization kit installed, make sure your head sits as far back as possible and that there is enough clearance is available for the visor to move freely, otherwise it wont open completely.
 - Insert the servo into the designated slot on the right side of the helmet
   - **Servo wires should face the right-hand side**
 - Secure the servo using screws
