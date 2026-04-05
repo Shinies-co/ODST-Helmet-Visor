@@ -6,18 +6,18 @@
 const int BUTTON_PIN = 2;          // Button wire goes here
 const int SERVO_PIN  = 9;          // Servo signal wire goes here
 
-const int CLOSED_ANGLE = 5;        // Visor fully closed position
-const int OPEN_ANGLE   = 75;       // Visor fully open position
+const int CLOSED_ANGLE = 7;        // Visor fully closed position
+const int OPEN_ANGLE   = 62;       // Visor fully open position
 
 const bool REVERSE_SERVO = true;   // Set to true if the servo moves backwards
 const bool HOLD_POSITION = true;   // true = servo stays locked, false = servo releases after moving
 
-const int STEP_DELAY_MS    = 10;    // Lower = faster movement
+const int STEP_DELAY_MS    = 25;    // Lower = faster movement
 const int STARTUP_DELAY_MS = 1000; // Wait after powering on
 const int HOLD_TIME_MS     = 800;  // Hold button this long to force visor closed
 const int SETTLE_TIME_MS   = 250;  // Extra time after movement finishes
 
-const int OVERSHOOT_ANGLE  = 3;    // Extra push past final position before settling back
+const int OVERSHOOT_ANGLE  = 0;    // Extra push past final position before settling back
 
 // Safety limits
 const int MIN_SAFE_ANGLE = 0;
