@@ -10,6 +10,7 @@ Designed to be **easy to build, easy to modify, and beginner-friendly**.
 > 🛒 This system is designed for the Shinies ODST helmet  
 > You can find the model here: https://etsy.com/shop/shiniesprops
 ---
+![ezgif-305e1d2e0402935a](https://github.com/user-attachments/assets/6fe107b1-14fa-4280-8a70-3c027c679c30)
 
 ## 🚀 Features
 
@@ -240,9 +241,9 @@ The full Arduino code is located here:
 ### Key values you may want to adjust
 
 const int CLOSED_ANGLE = 0;
-const int OPEN_ANGLE   = 75;
+const int OPEN_ANGLE   = 62;
 const bool REVERSE_SERVO = true;
-const int STEP_DELAY_MS = 10;
+const int STEP_DELAY_MS = 15;
 ```
 
 ---
@@ -251,9 +252,9 @@ const int STEP_DELAY_MS = 10;
 Most people only need to change these values:
 ```cpp 
 const int CLOSED_ANGLE = 0;
-const int OPEN_ANGLE   = 75;
+const int OPEN_ANGLE   = 62;
 const bool REVERSE_SERVO = true;
-const int STEP_DELAY_MS = 10;
+const int STEP_DELAY_MS = 15;
 
 ```
 
@@ -287,21 +288,7 @@ const bool REVERSE_SERVO = false;
 Increase:
 
 ```cpp
-const int OPEN_ANGLE = 75;
-```
-
-For example:
-
-```cpp
-const int OPEN_ANGLE = 80;
-```
-
-### Servo pushes too far or hits a hard stop
-
-Lower:
-
-```cpp
-const int OPEN_ANGLE = 75;
+const int OPEN_ANGLE = 62;
 ```
 
 For example:
@@ -310,18 +297,32 @@ For example:
 const int OPEN_ANGLE = 70;
 ```
 
-### Movement is too fast
+### Servo pushes too far or hits a hard stop
 
-Increase:
+Lower:
 
 ```cpp
-const int STEP_DELAY_MS = 10;
+const int OPEN_ANGLE = 62;
 ```
 
 For example:
 
 ```cpp
+const int OPEN_ANGLE = 55;
+```
+
+### Movement is too fast
+
+Increase:
+
+```cpp
 const int STEP_DELAY_MS = 15;
+```
+
+For example:
+
+```cpp
+const int STEP_DELAY_MS = 20;
 ```
 
 ### Movement is too slow
@@ -329,13 +330,13 @@ const int STEP_DELAY_MS = 15;
 Decrease:
 
 ```cpp
-const int STEP_DELAY_MS = 10;
+const int STEP_DELAY_MS = 15;
 ```
 
 For example:
 
 ```cpp
-const int STEP_DELAY_MS = 5;
+const int STEP_DELAY_MS = 10;
 ```
 
 ---
@@ -348,12 +349,12 @@ const int BUTTON_PIN = 2;
 const int SERVO_PIN  = 9;       
 
 const int CLOSED_ANGLE = 0;      
-const int OPEN_ANGLE   = 75;     
+const int OPEN_ANGLE   = 62;     
 
 const bool REVERSE_SERVO = true;  
 const bool HOLD_POSITION = true;   
 
-const int STEP_DELAY_MS    = 10;   
+const int STEP_DELAY_MS    = 15;   
 const int STARTUP_DELAY_MS = 1000; 
 const int HOLD_TIME_MS     = 800;  
 const int SETTLE_TIME_MS   = 250;  
