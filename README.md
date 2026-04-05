@@ -211,6 +211,9 @@ If everything is installed correctly, you now have a fully functioning:
 Always test before final assembly or painting
 Make sure all moving parts are smooth and free of resistance
 Avoid forcing the servo into mechanical limits
+![ezgif-391e8772bda023c3](https://github.com/user-attachments/assets/f984975c-7a03-42a1-ad6c-0033bf60fdf3)
+
+
 ---
 
 ## 🎮 Controls
